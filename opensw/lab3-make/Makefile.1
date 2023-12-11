@@ -1,0 +1,13 @@
+
+./bin/myapp: ./obj/func1.o ./obj/func2.o ./obj/main.o
+	gcc -o ./bin/myapp ./obj/func1.o ./obj/func2.o ./obj/main.o
+
+./obj/func1.o: ./src/func1.c
+	gcc -c ./src/func1.c -o ./obj/func1.o -I./include
+
+./obj/func2.o: ./src/func2.c
+	gcc -c ./src/func2.c -o ./obj/func2.o -I./include
+
+./obj/main.o: ./src/main.c
+	gcc -c ./src/main.c -o ./obj/main.o -I./include
+	
